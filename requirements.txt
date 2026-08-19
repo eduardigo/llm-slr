@@ -1,0 +1,12 @@
+# Pipeline llm_slr, Python 3.10+.
+# O repo legado tem dependências próprias, no Dockerfile dele.
+bibtexparser<2
+pandas
+scikit-learn
+matplotlib
+pyyaml
+requests
+openpyxl
+pytest
+jupyter
+ipykernel

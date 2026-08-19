@@ -1,0 +1,28 @@
+# Conferido com as justificativas dos revisores originais, que estão no campo
+# `review` de bibs/illiterate/round1-others.bib (revisão dupla AAA1/AAA2).
+# Nas 36 aceitações e 210 negações, a decisão é tomada sobre o abstract e
+# exige duas coisas: desenvolvimento ou implementação de sistema ou
+# interface, e menção explícita ao nível de alfabetização ou escolaridade dos
+# usuários (illiterate, functional illiterate, semi-literate, low literacy,
+# lower education, computer illiterate). Trabalhos de inclusão digital sem
+# menção a alfabetização foram negados.
+theme: illiterate
+status: validated
+language: en
+topic: >
+  Development of interactive systems and interfaces for illiterate or
+  low-literacy users.
+research_question: >
+  Which studies report the development of interactive systems, interfaces,
+  or interaction mechanisms targeting illiterate or low-literacy users?
+inclusion_criteria:
+  - The abstract mentions the development or implementation of an interactive
+    system, user interface, or interaction mechanism (software or hardware)
+    aimed at illiterate, functionally illiterate, semi-literate, low-literacy,
+    or computer-illiterate users.
+  - The abstract explicitly characterizes the literacy or education level of
+    the target users (e.g., illiterate, low literacy, lower education,
+    writing difficulties despite oral proficiency).
+  - The study addresses interaction approaches to overcome literacy barriers,
+    such as speech, audio, icons, multimedia, or ubiquitous computing, or
+    systems for literacy training of these users.

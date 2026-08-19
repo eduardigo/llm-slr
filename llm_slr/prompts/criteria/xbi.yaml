@@ -1,0 +1,30 @@
+# Conferido em parte. Watanabe et al. (2020) descrevem o dataset como "XBI
+# automatic detection approaches", com foco em detecção automática. A RSL
+# candidata, Sabaren, Mascheroni, Greiner & Irrazábal (2018), "A Systematic
+# Literature Review in Cross-browser Testing", JCS&T 18, tem RQs alinhadas
+# (técnicas de teste cross-browser e ferramentas de detecção de XBI), mas
+# selecionou 31 estudos contra 39 do dataset, o que sugere versão ou rodada
+# diferente. A divergência será tratada por validação empírica, refinando a
+# redação apenas nos folds de treino, como em Homiar et al. (2025); os folds
+# de teste ficam intocados.
+theme: xbi
+status: draft
+language: en
+topic: >
+  Automatic detection of cross-browser incompatibilities (XBIs) in web
+  applications.
+research_question: >
+  Which technological approaches, techniques, and tools are used or proposed
+  to automatically detect cross-browser incompatibilities in web
+  applications?
+inclusion_criteria:
+  - The study reports a technological approach for automatically detecting
+    cross-browser incompatibilities, inconsistencies, or compatibility issues
+    of web applications across different browsers, browser versions, or
+    configurations.
+  - The study proposes or evaluates cross-browser compatibility testing
+    techniques (e.g., DOM model analysis, visual/screenshot comparison,
+    crawling and differencing, machine learning over rendering features).
+  - The study presents tools for cross-browser or cross-platform testing of
+    web applications, including mobile browsers, or their empirical
+    validation.

@@ -1,0 +1,27 @@
+# Rascunho, consistente com a descrição de Watanabe et al. (2020),
+# "identifying different approaches of Model-Driven Web Engineering" (95
+# candidatos e 30 incluídos, o que bate com o dataset). A RSL original não é
+# citada em Watanabe (2020), não está na tese da Felizardo (USP 2012) e os
+# .bib não trazem justificativas de revisão. A redação dos critérios será
+# refinada por validação empírica, apenas nos folds de treino, como em Homiar
+# et al. (2025); os folds de teste ficam intocados.
+theme: mdwe
+status: draft
+language: en
+topic: >
+  Model-driven web engineering (MDWE): model-driven approaches applied to
+  the development of web applications.
+research_question: >
+  Which model-driven approaches, languages, transformations, and tools are
+  used or proposed for the engineering of web applications?
+inclusion_criteria:
+  - The study proposes, applies, or evaluates model-driven approaches (MDA,
+    MDE, MDD) for the design, development, testing, or maintenance of web
+    applications.
+  - The study presents modeling languages, metamodels, model transformations,
+    or code generation targeting web applications (e.g., WebML, UWE, UWA).
+  - The study presents tool support or authoring environments for
+    model-driven development of web applications.
+  - The study addresses interoperability, composition, or evaluation (e.g.,
+    usability, verification) of web applications within a model-driven
+    engineering process.

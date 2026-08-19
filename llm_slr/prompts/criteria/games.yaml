@@ -1,0 +1,25 @@
+# Conferido com a RSL original: Ampatzoglou & Stamelos (2010), "Software
+# engineering research for computer games: A systematic review", IST 52(9).
+# As contagens fecham: os 223 artigos que restam após a exclusão por título
+# são as 223 entradas do dataset. O critério original pede que o estudo seja
+# classificável sob algum tópico de engenharia de software no domínio de
+# jogos, nas categorias do próprio paper (generic, analysis, design,
+# implementation, quality, management).
+theme: games
+status: validated
+language: en
+topic: >
+  Software engineering research in the domain of computer games.
+research_question: >
+  What software engineering research topics, approaches, and methods are
+  being addressed in the domain of computer games?
+inclusion_criteria:
+  - The study is relevant to software engineering, i.e., it can be classified
+    under a software engineering topic applied to computer or video games.
+  - The study addresses requirements/analysis, design (including software
+    architecture, game engines, and design patterns), implementation, quality
+    (including testing, usability, and playability evaluation), or project
+    management in the context of game development.
+  - The study reports generic software engineering research for games, such
+    as development processes, methodologies, practices, or empirical accounts
+    of game development projects.

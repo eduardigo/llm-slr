@@ -1,0 +1,25 @@
+# Conferido com a RSL original: Souza, Falbo & Vijaykumar (2015), "Knowledge
+# management initiatives in software testing: A mapping study", Information
+# and Software Technology 57. O critério de inclusão original (IC1) é "The
+# study discusses a KM initiative in software testing"; os demais itens abrem
+# esse critério nas facetas mapeadas pelo próprio estudo (repositórios, reuso
+# de casos de teste, suporte automatizado), para dar mais contexto ao modelo.
+theme: testing
+status: validated
+language: en
+topic: >
+  Knowledge management (KM) initiatives applied to software testing.
+research_question: >
+  What is the current status of research regarding knowledge management
+  applied to software testing?
+inclusion_criteria:
+  - The study discusses a knowledge management initiative in software testing
+    (this is the core criterion).
+  - The study addresses the capture, organization, sharing, or reuse of
+    software testing knowledge, experience, or artifacts, such as test cases,
+    defect taxonomies, or knowledge about testing techniques.
+  - The study presents knowledge management systems, repositories, ontologies
+    as knowledge representation, or automated support for managing testing
+    knowledge.
+  - The study investigates the role of knowledge or experience of testers in
+    testing practice and performance.

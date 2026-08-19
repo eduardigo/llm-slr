@@ -1,0 +1,29 @@
+# Conferido com a RSL original: Kitchenham, Brereton, Budgen, Turner, Bailey
+# & Linkman (2009), "Systematic literature reviews in software engineering –
+# A systematic literature review", IST 51(1). É um estudo terciário, com
+# janela de jan/2004 a jun/2007. O critério de inclusão original aceita
+# artigos revisados por pares que sejam SLRs ("literature surveys with
+# defined research questions, search process, data extraction and data
+# presentation, whether or not the researchers referred to their study as a
+# systematic literature review") ou meta-análises, inclusive quando a revisão
+# é apenas uma parte do artigo. Surveys informais, sem processo definido,
+# ficaram de fora, o que bate com a fronteira observada nos dados.
+theme: slr
+status: validated
+language: en
+topic: >
+  Systematic literature reviews and meta-analyses in software engineering
+  (tertiary study).
+research_question: >
+  Which peer-reviewed articles report systematic literature reviews or
+  meta-analyses of software engineering research topics?
+inclusion_criteria:
+  - The study is a systematic literature review, that is, a literature survey
+    with defined research questions, a defined search process, data
+    extraction, and data presentation, whether or not the authors call it a
+    systematic literature review.
+  - The study is a meta-analysis aggregating results of multiple empirical
+    studies on a software engineering topic.
+  - The literature review or meta-analysis may be the main purpose of the
+    article or only one element of it (e.g., the review component of a wider
+    empirical study).

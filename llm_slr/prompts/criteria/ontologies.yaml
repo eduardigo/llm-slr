@@ -1,0 +1,32 @@
+# Conferido em parte. A RSL de referência é Souza, Falbo & Vijaykumar,
+# "Ontologies in Software Testing: A Systematic Literature Review" (ONTOBRAS
+# 2013), cujo critério original é "(IC1) The study presents an ontology about
+# the software testing domain". O dataset legado (491 candidatos, 47
+# incluídos) é maior que o da versão ONTOBRAS (295 e 18), provavelmente por
+# corresponder a uma versão estendida da revisão, e seus incluídos abrangem
+# também aplicações de ontologias em teste, como geração de casos de teste
+# para web services via OWL-S, e não só ontologias do domínio. Os critérios
+# abaixo seguem o gold standard do dataset. A divergência será tratada por
+# validação empírica, refinando a redação apenas nos folds de treino, como em
+# Homiar et al. (2025); os folds de teste ficam intocados.
+theme: ontologies
+status: draft
+language: en
+topic: >
+  Ontologies in software testing: ontologies of the software testing domain
+  and their use to support testing activities.
+research_question: >
+  Which ontologies model the software testing domain, and how are ontologies
+  used to support software testing activities?
+inclusion_criteria:
+  - The study presents, builds, or evaluates an ontology about the software
+    testing domain (concepts, vocabulary, knowledge representation for
+    testing).
+  - The study uses an ontology to support a software testing activity, such
+    as test case generation, selection, prioritization, execution, or
+    evaluation.
+  - The study applies ontology-based techniques to testing of specific kinds
+    of systems, such as web services (e.g., OWL-S based testing), GUIs, web
+    applications, or service compositions.
+  - The study presents frameworks, environments, or agents that rely on
+    ontologies to automate or coordinate software testing.

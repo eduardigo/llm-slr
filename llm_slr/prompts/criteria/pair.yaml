@@ -1,0 +1,27 @@
+# Conferido com a RSL original: Salleh, Mendes & Grundy (2011), "Empirical
+# Studies of Pair Programming for CS/SE Teaching in Higher Education: A
+# Systematic Literature Review", IEEE TSE 37(4). A revisão trata de ensino
+# superior, não de indústria, a busca cobriu 1999-2007 e adota pair
+# programming como definido pelos criadores do XP. A RQ e os critérios abaixo
+# parafraseiam o protocolo original.
+theme: pair
+status: validated
+language: en
+topic: >
+  Empirical studies of pair programming (PP) for teaching Computer Science
+  and Software Engineering in higher education.
+research_question: >
+  What evidence is there of pair programming studies conducted in higher
+  education settings that investigated PP's effectiveness and/or pair
+  compatibility for CS/SE education?
+inclusion_criteria:
+  - The study empirically investigates factors affecting the effectiveness of
+    pair programming for Computer Science or Software Engineering students in
+    higher education (e.g., pair compatibility, skill level, personality,
+    pairing configurations).
+  - The study empirically measures the effectiveness of pair programming for
+    CS/SE students, on outcomes such as academic performance, program or
+    design quality, learning, satisfaction, confidence, or time spent.
+  - The study uses pair programming as defined by the eXtreme Programming
+    community (two programmers working together at one computer) in an
+    educational setting such as an introductory programming or CS/SE course.
