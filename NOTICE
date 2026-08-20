@@ -1,0 +1,29 @@
+NOTICE — Escopo da licença e conteúdo de terceiros
+
+O arquivo LICENSE (MIT) aplica-se exclusivamente ao material de autoria de
+Eduardo Felipe Ardigo Braga produzido neste trabalho:
+
+  - llm_slr/        pipeline de triagem, protocolos de inclusão
+                    operacionalizados, avaliação, testes e experimentos
+  - notebooks/      análises exploratórias
+  - README.md, requirements.txt
+
+Conteúdo de terceiros, NÃO coberto pela licença acima:
+
+  - slr-sentence-embedding-master/
+    Reprodução do repositório que acompanha WATANABE, W. M. et al. Reducing
+    efforts of software engineering systematic literature reviews updates
+    using text classification. Information and Software Technology, v. 128,
+    p. 106395, 2020. O código, a configuração e os resultados são de autoria
+    dos autores originais e são mantidos aqui sem modificação, para permitir
+    os testes de paridade descritos na dissertação. Seus termos de uso devem
+    ser consultados junto aos autores.
+
+  - slr-sentence-embedding-master/bibs/
+    Conjuntos de dados das oito RSLs, com o padrão ouro de inclusão e
+    exclusão produzido pelos revisores das revisões originais. Os registros
+    bibliográficos e os resumos neles contidos permanecem sujeitos aos
+    direitos de seus respectivos autores e editores.
+
+A reprodução desses materiais destina-se a fins de pesquisa acadêmica e à
+reprodutibilidade dos experimentos relatados na dissertação.
