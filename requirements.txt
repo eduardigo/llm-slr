@@ -1,12 +1,24 @@
-# Pipeline llm_slr, Python 3.10+.
-# O repo legado tem dependências próprias, no Dockerfile dele.
-bibtexparser<2
-pandas
-scikit-learn
-matplotlib
-pyyaml
-requests
-openpyxl
-pytest
-jupyter
-ipykernel
+# --- Núcleo científico / ML ---
+numpy==2.5.1
+pandas==3.0.3
+scikit-learn==1.9.0
+nltk==3.10.0            
+
+# --- Entrada de dados (SLR) ---
+bibtexparser==1.4.4    
+
+# --- Configuração / critérios ---
+PyYAML==6.0.3       
+
+# --- Cliente LLM (Ollama) ---
+requests==2.34.2      
+
+# --- Figuras / relatórios ---
+matplotlib==3.11.0     
+
+# --- Notebooks (01_eda_datasets, 02_resultados) ---
+jupyterlab==4.6.1
+ipykernel==7.3.0
+
+# --- Testes ---
+pytest==9.1.1    

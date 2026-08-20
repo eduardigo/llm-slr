@@ -37,8 +37,17 @@ Dentro de `llm_slr/`:
 
 ```bash
 pip install -r requirements.txt
+python -m nltk.downloader punkt stopwords averaged_perceptron_tagger wordnet omw-1.4
 ollama pull llama3.2:3b && ollama pull gemma2:2b && ollama pull qwen2.5:3b
 ```
+
+`requirements.txt` traz as dependências diretas, já fixadas nas versões do
+ambiente que gerou os resultados (Python 3.12.3). Para replicação exata,
+incluindo todas as transitivas, use `pip install -r requirements-lock.txt`.
+
+Os corpora do NLTK são exigidos pela baseline: `llm_slr/eval/baseline.py`
+reaproveita os filtros de texto do repositório legado (`util/text_filter.py`),
+que tokeniza, remove stopwords e lematiza com o NLTK.
 
 ## Como usar
 
@@ -58,8 +67,9 @@ jupyter lab notebooks/
 ```
 
 Os experimentos são retomáveis: combinações já gravadas em `results/raw.csv` são
-puladas, e o cache de respostas (`llm_slr/cache/`, fora do versionamento) evita
-pagar inferência de novo em reexecuções parciais.
+puladas, e o cache de respostas (`llm_slr/cache/`), versionado neste repositório
+com as 11.191 inferências do estudo, evita pagar inferência de novo — inclusive
+permitindo refazer todas as análises sem GPU.
 
 ## Decisões de projeto
 

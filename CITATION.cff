@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "Se utilizar este software, cite a dissertação abaixo."
+authors:
+  - family-names: "Braga"
+    given-names: "Eduardo Felipe Ardigo"
+title: "llm-slr: triagem de estudos em atualizações de RSLs com LLMs de pesos abertos"
+license: MIT
+repository-code: "https://github.com/eduardigo/llm-slr"
+year: 2026
+preferred-citation:
+  type: thesis
+  authors:
+    - family-names: "Braga"
+      given-names: "Eduardo Felipe Ardigo"
+  title: "Atualização de revisões sistemáticas da literatura: classificação automática de artigos via grandes modelos de linguagem (LLMs)"
+  thesis-type: "Dissertação de Mestrado"
+  institution:
+    name: "Universidade Tecnológica Federal do Paraná"
+  year: 2026
