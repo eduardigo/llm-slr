@@ -70,6 +70,16 @@ pagar inferência de novo em reexecuções parciais.
 - Exemplos few-shot amostrados do bloco de treino do fold temporal
 - Métricas alinhadas às do `main.py` legado (`missed`/`excluded`), mais WSS@95
 
+## Licença
+
+O código e os artefatos de autoria própria (`llm_slr/`, `notebooks/`) são
+distribuídos sob a licença [MIT](LICENSE).
+
+O diretório `slr-sentence-embedding-master/` reproduz o repositório de
+Watanabe et al. (2020) e **não** é coberto por essa licença: código, dados e
+padrão ouro pertencem aos autores originais. Ver [NOTICE](NOTICE) para o
+escopo detalhado.
+
 ## Créditos
 
 Baseline e datasets derivados de Watanabe et al. (2020), *slr-sentence-embedding*,
