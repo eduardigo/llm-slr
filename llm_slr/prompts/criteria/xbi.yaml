@@ -1,12 +1,3 @@
-# Conferido em parte. Watanabe et al. (2020) descrevem o dataset como "XBI
-# automatic detection approaches", com foco em detecção automática. A RSL
-# candidata, Sabaren, Mascheroni, Greiner & Irrazábal (2018), "A Systematic
-# Literature Review in Cross-browser Testing", JCS&T 18, tem RQs alinhadas
-# (técnicas de teste cross-browser e ferramentas de detecção de XBI), mas
-# selecionou 31 estudos contra 39 do dataset, o que sugere versão ou rodada
-# diferente. A divergência será tratada por validação empírica, refinando a
-# redação apenas nos folds de treino, como em Homiar et al. (2025); os folds
-# de teste ficam intocados.
 theme: xbi
 status: draft
 language: en

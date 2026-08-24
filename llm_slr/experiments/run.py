@@ -1,14 +1,3 @@
-"""Experimento principal: temas x modelos x estratégias x folds.
-
-Grava um resultado por artigo em results/raw.csv, em append. A rodada é
-retomável: combinações (tema, modelo, estratégia, fold) já completas são
-puladas e o cache de respostas cobre o resto. Score inválido vira uma linha
-com a coluna error preenchida, sem interromper a rodada.
-
-Uso:
-  python -m llm_slr.experiments.run                       # tudo
-  python -m llm_slr.experiments.run --themes slr,games --models llama3.2:3b
-"""
 import argparse
 import csv
 from pathlib import Path
@@ -28,7 +17,6 @@ FIELDS = ["theme", "model", "strategy", "fold", "title", "year", "label",
 
 STRATEGIES = ("zero-shot", "few-shot-random", "few-shot-similar")
 
-# temas menores primeiro, para ter resultado parcial antes
 THEME_ORDER = ["slr", "mdwe", "illiterate", "pair", "games",
                "testing", "ontologies", "xbi"]
 
@@ -44,14 +32,12 @@ def make_selector(strategy, train_pool, k_per_class):
 
 
 def strategy_label(strategy, k_per_class):
-    """Com k=2 o rótulo não muda; outros k ganham sufixo (-k1, -k4)."""
     if strategy == "zero-shot" or k_per_class == 2:
         return strategy
     return f"{strategy}-k{k_per_class}"
 
 
 def load_done_counts():
-    """Conta as linhas já gravadas por (theme, model, strategy, fold)."""
     done = {}
     if RAW_CSV.exists():
         with open(RAW_CSV, encoding="utf-8", newline="") as f:
@@ -90,7 +76,7 @@ def run_combination(theme, model, strategy, fold_id, train, test,
             rows.append({**base, "score": r.score,
                          "latency_s": round(r.latency_s, 3),
                          "from_cache": r.from_cache, "error": ""})
-        except Exception as exc:  # registra e segue, para a rodada não cair
+        except Exception as exc:
             rows.append({**base, "score": "", "latency_s": "",
                          "from_cache": False, "error": str(exc)[:200]})
     append_rows(rows)

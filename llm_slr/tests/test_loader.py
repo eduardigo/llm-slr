@@ -1,4 +1,3 @@
-"""Testes unitários do loader com um .bib sintético."""
 import textwrap
 
 from llm_slr.data.loader import load_articles, to_xy

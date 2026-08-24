@@ -1,9 +1,3 @@
-"""Triagem de um artigo: monta o prompt, chama o LLM e valida a resposta.
-
-O score de 1 a 7 não vira decisão binária aqui. Quem converte score em
-decisão é llm_slr.eval.metrics, que varre os thresholds da escala; este
-módulo só coleta score, justificativa e latência.
-"""
 from dataclasses import dataclass
 
 from llm_slr.config import RELEVANCE_SCALE_MAX, RELEVANCE_SCALE_MIN
@@ -12,12 +6,12 @@ from llm_slr.prompts.builder import SYSTEM_PROMPT, build_user_prompt
 
 @dataclass(frozen=True)
 class ScreeningResult:
-    score: int              # 1-7, concordância com a inclusão
+    score: int
     justification: str
     model: str
-    latency_s: float        # 0.0 quando veio do cache
+    latency_s: float
     from_cache: bool
-    label: int              # decisão dos revisores originais
+    label: int
     title: str
 
 
@@ -58,11 +52,6 @@ def screen_article(article, criteria, client, cache=None, examples=()):
 
 def screen_batch(articles, criteria, client, cache=None, examples=(),
                  selector=None, on_result=None):
-    """Triagem sequencial, com callback opcional de progresso.
-
-    `examples` são exemplos fixos; `selector` (ver llm_slr.fewshot) escolhe
-    exemplos por candidato. Só um dos dois pode ser usado.
-    """
     if examples and selector:
         raise ValueError("use 'examples' fixos OU 'selector', não ambos")
 

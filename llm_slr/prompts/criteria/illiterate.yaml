@@ -1,11 +1,3 @@
-# Conferido com as justificativas dos revisores originais, que estão no campo
-# `review` de bibs/illiterate/round1-others.bib (revisão dupla AAA1/AAA2).
-# Nas 36 aceitações e 210 negações, a decisão é tomada sobre o abstract e
-# exige duas coisas: desenvolvimento ou implementação de sistema ou
-# interface, e menção explícita ao nível de alfabetização ou escolaridade dos
-# usuários (illiterate, functional illiterate, semi-literate, low literacy,
-# lower education, computer illiterate). Trabalhos de inclusão digital sem
-# menção a alfabetização foram negados.
 theme: illiterate
 status: validated
 language: en

@@ -1,8 +1,3 @@
-"""Gera as figuras da dissertação a partir dos resultados em results/.
-
-Uso: python -m llm_slr.experiments.make_figures
-Saída: ../dissertacao/figuras/*.png, a 220 dpi.
-"""
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -14,10 +9,8 @@ from llm_slr.data.loader import load_theme
 from llm_slr.data.splits import YearsSplit
 from llm_slr.eval.metrics import metrics_at
 
-# dissertacao/ fica ao lado do repositório
 FIG_DIR = PROJECT_ROOT.parent / "dissertacao" / "figuras"
 
-# cores das figuras
 C_INCLUDED, C_EXCLUDED = "#2a78d6", "#c3c2b7"
 C_SURFACE, C_INK, C_MUTED, C_GRID = "#ffffff", "#0b0b0b", "#898781", "#e1e0d9"
 MODEL_COLORS = {"llama3.2:3b": "#2a78d6", "qwen2.5:3b": "#1baf7a",

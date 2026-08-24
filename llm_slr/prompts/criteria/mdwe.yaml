@@ -1,10 +1,3 @@
-# Rascunho, consistente com a descrição de Watanabe et al. (2020),
-# "identifying different approaches of Model-Driven Web Engineering" (95
-# candidatos e 30 incluídos, o que bate com o dataset). A RSL original não é
-# citada em Watanabe (2020), não está na tese da Felizardo (USP 2012) e os
-# .bib não trazem justificativas de revisão. A redação dos critérios será
-# refinada por validação empírica, apenas nos folds de treino, como em Homiar
-# et al. (2025); os folds de teste ficam intocados.
 theme: mdwe
 status: draft
 language: en

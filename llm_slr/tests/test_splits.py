@@ -1,4 +1,3 @@
-"""Testes do split temporal, vindos de test/test_years_split.py do legado."""
 from llm_slr.data.splits import YearsSplit
 
 

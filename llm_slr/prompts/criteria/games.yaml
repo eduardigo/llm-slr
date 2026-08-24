@@ -1,10 +1,3 @@
-# Conferido com a RSL original: Ampatzoglou & Stamelos (2010), "Software
-# engineering research for computer games: A systematic review", IST 52(9).
-# As contagens fecham: os 223 artigos que restam após a exclusão por título
-# são as 223 entradas do dataset. O critério original pede que o estudo seja
-# classificável sob algum tópico de engenharia de software no domínio de
-# jogos, nas categorias do próprio paper (generic, analysis, design,
-# implementation, quality, management).
 theme: games
 status: validated
 language: en

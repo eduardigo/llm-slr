@@ -1,10 +1,3 @@
-"""Montagem dos prompts de triagem.
-
-A escala Likert de 7 pontos mede concordância com a inclusão e segue a
-semântica usada por Felizardo & Conte (ESEM 2024), para permitir comparação
-direta. O prompt leva só os critérios de inclusão. Os exemplos few-shot,
-quando presentes, vêm do bloco de treino do fold temporal.
-"""
 LIKERT_SCALE = (
     "1 = strongly disagree, 2 = disagree, 3 = somewhat disagree, "
     "4 = neither agree nor disagree, 5 = somewhat agree, 6 = agree, "
@@ -31,7 +24,6 @@ MAX_EXAMPLE_ABSTRACT_CHARS = 700
 def _example_block(example):
     decision = "included" if example.label == 1 else "not included"
     abstract = example.abstract
-    # trunca só os abstracts dos exemplos; o do candidato vai inteiro
     if len(abstract) > MAX_EXAMPLE_ABSTRACT_CHARS:
         abstract = abstract[:MAX_EXAMPLE_ABSTRACT_CHARS].rsplit(" ", 1)[0] + " [...]"
     return (
@@ -42,7 +34,6 @@ def _example_block(example):
 
 
 def build_user_prompt(article, criteria, examples=()):
-    """Prompt zero-shot (examples vazio) ou few-shot."""
     parts = [
         f"Review topic: {criteria.topic}",
         f"Research question: {criteria.research_question}",

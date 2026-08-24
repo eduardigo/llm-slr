@@ -1,11 +1,3 @@
-"""Teste rápido comparando zero-shot e few-shot nos mesmos artigos.
-
-Roda as três estratégias (zero-shot, few-shot aleatório balanceado e
-few-shot por similaridade) sobre o bloco de teste do fold 1. Os exemplos
-saem apenas do bloco de treino do fold.
-
-Uso: python -m llm_slr.experiments.smoke_few_shot [tema] [modelo] [k]
-"""
 import sys
 
 from llm_slr.data.loader import load_theme

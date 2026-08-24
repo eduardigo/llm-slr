@@ -1,12 +1,3 @@
-"""Consolida raw.csv e baseline_raw.csv nas tabelas de resultado.
-
-Cada linha do resumo é um (tema, abordagem, fold), com abordagem igual a
-"{modelo}/{estratégia}" nos LLMs ou "svm-baseline". Todas passam por
-eval.metrics.evaluate_fold: os LLMs com thresholds de 1 a 7, a baseline com
-as probabilidades.
-
-Uso: python -m llm_slr.eval.summary, que imprime o que houver em results/.
-"""
 from pathlib import Path
 
 import pandas as pd
@@ -43,7 +34,7 @@ def llm_summary(raw=None):
     group_cols = ["theme", "model", "strategy", "fold"]
     for (theme, model, strategy, fold), g in valid.groupby(group_cols):
         if g["label"].nunique() < 2:
-            continue  # fold com uma classe só não tem métrica definida
+            continue
         evaluation = evaluate_fold(
             g["score"].astype(int).tolist(), g["label"].tolist(),
             thresholds=LIKERT_THRESHOLDS,
@@ -103,7 +94,6 @@ def build_summary(save=True):
 
 
 def pivot_mean(summary, metric="wss95"):
-    """Tabela tema x abordagem com a média da métrica entre os folds."""
     return summary.pivot_table(index="approach", columns="theme",
                                values=metric, aggfunc="mean").round(3)
 

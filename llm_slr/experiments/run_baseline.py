@@ -1,11 +1,3 @@
-"""Roda a baseline SVM/TF-IDF em todos os temas e salva por artigo.
-
-Gera results/baseline_raw.csv, com a probabilidade de cada artigo nos mesmos
-folds dos LLMs, e results/baseline_folds.csv, com o threshold calibrado e os
-best_params de cada fold. Temas já presentes no CSV são pulados.
-
-Uso: python -m llm_slr.experiments.run_baseline [--themes slr,games]
-"""
 import argparse
 import csv
 import json

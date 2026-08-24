@@ -1,9 +1,3 @@
-# Conferido com a RSL original: Salleh, Mendes & Grundy (2011), "Empirical
-# Studies of Pair Programming for CS/SE Teaching in Higher Education: A
-# Systematic Literature Review", IEEE TSE 37(4). A revisão trata de ensino
-# superior, não de indústria, a busca cobriu 1999-2007 e adota pair
-# programming como definido pelos criadores do XP. A RQ e os critérios abaixo
-# parafraseiam o protocolo original.
 theme: pair
 status: validated
 language: en

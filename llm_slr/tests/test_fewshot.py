@@ -1,4 +1,3 @@
-"""Testes dos seletores de exemplos few-shot."""
 import pytest
 
 from llm_slr.data.loader import Article
@@ -27,7 +26,7 @@ def test_balanced_random_is_deterministic_and_balanced():
 
     assert a == b
     assert len(a) == 4
-    assert sum(e.label for e in a) == 2  # 2 incluídos e 2 excluídos
+    assert sum(e.label for e in a) == 2
 
 
 def test_balanced_random_caps_k_at_pool_size():
@@ -41,7 +40,6 @@ def test_similarity_selects_most_similar_per_class():
 
     assert len(examples) == 2
     included, excluded = examples
-    # o candidato fala de game engine e rendering
     assert included.title == "Game engine architecture"
     assert excluded.label == 0
 
@@ -53,7 +51,6 @@ def test_similarity_is_deterministic():
 
 
 def test_selectors_never_leak_candidate_into_examples():
-    # o candidato não está no pool de treino, então não vira exemplo
     for selector in (BalancedRandomSelector(POOL), SimilaritySelector(POOL)):
         assert CANDIDATE not in selector(CANDIDATE)
 

@@ -1,10 +1,3 @@
-"""Clientes de inferência LLM.
-
-Todo cliente fixa temperature=0 e seed, para que as rodadas sejam
-reprodutíveis. A interface é curta de propósito (entra system + user, sai um
-dict JSON), o que permite trocar o Ollama por outro backend sem mexer no
-resto do pipeline.
-"""
 import json
 import time
 from dataclasses import dataclass
@@ -16,14 +9,13 @@ from llm_slr.config import OLLAMA_URL, SEED, TEMPERATURE
 
 @dataclass(frozen=True)
 class LLMResponse:
-    content: dict          # JSON retornado pelo modelo, já parseado
-    latency_s: float       # tempo de inferência
+    content: dict
+    latency_s: float
     model: str
     raw_text: str
 
 
 class OllamaClient:
-    """Adaptador do endpoint /api/chat do Ollama, com saída em JSON."""
 
     def __init__(self, model, base_url=OLLAMA_URL, temperature=TEMPERATURE,
                  seed=SEED, num_predict=300, num_ctx=8192, timeout_s=300):
@@ -33,7 +25,6 @@ class OllamaClient:
             "temperature": temperature,
             "seed": seed,
             "num_predict": num_predict,
-            # o default do Ollama (2048) trunca prompts few-shot em silêncio
             "num_ctx": num_ctx,
         }
         self._timeout_s = timeout_s
@@ -45,7 +36,6 @@ class OllamaClient:
                 {"role": "system", "content": system},
                 {"role": "user", "content": user},
             ],
-            # sem format="json" os modelos menores erram bastante o parsing
             "format": "json",
             "stream": False,
             "options": self._options,

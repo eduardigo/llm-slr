@@ -1,11 +1,3 @@
-"""Teste rápido de triagem zero-shot com 10 artigos de um tema.
-
-Pega uma amostra fixa do bloco de teste do fold 1, com 5 incluídos e 5
-excluídos, e no fim repete 2 inferências sem cache para conferir se o
-resultado se mantém.
-
-Uso: python -m llm_slr.experiments.smoke_zero_shot [tema] [modelo]
-"""
 import sys
 
 from llm_slr.data.loader import load_theme

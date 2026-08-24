@@ -1,9 +1,3 @@
-# Conferido com a RSL original: Souza, Falbo & Vijaykumar (2015), "Knowledge
-# management initiatives in software testing: A mapping study", Information
-# and Software Technology 57. O critério de inclusão original (IC1) é "The
-# study discusses a KM initiative in software testing"; os demais itens abrem
-# esse critério nas facetas mapeadas pelo próprio estudo (repositórios, reuso
-# de casos de teste, suporte automatizado), para dar mais contexto ao modelo.
 theme: testing
 status: validated
 language: en

@@ -1,18 +1,3 @@
-"""Seleção de exemplos few-shot a partir do histórico da revisão original.
-
-A ideia é usar os artigos já avaliados na RSL original (o bloco de treino do
-fold temporal) para calibrar o LLM por In-Context Learning, sem
-retreinamento, com exemplos aceitos e rejeitados.
-
-Duas estratégias:
-- BalancedRandomSelector: k exemplos fixos por classe, sorteados uma vez com
-  seed, iguais para todos os candidatos do fold.
-- SimilaritySelector: k exemplos por classe mais próximos do candidato
-  (TF-IDF + cosseno), variando artigo a artigo.
-
-As duas são determinísticas e leem só o bloco de treino, de modo que nada do
-bloco de teste chega ao prompt.
-"""
 import random
 
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -28,7 +13,6 @@ def _split_by_label(pool):
 
 
 class BalancedRandomSelector:
-    """k exemplos por classe, os mesmos para todos os candidatos."""
 
     name = "few-shot-random"
 
@@ -45,7 +29,6 @@ class BalancedRandomSelector:
 
 
 class SimilaritySelector:
-    """k exemplos por classe mais próximos do candidato (TF-IDF/cosseno)."""
 
     name = "few-shot-similar"
 

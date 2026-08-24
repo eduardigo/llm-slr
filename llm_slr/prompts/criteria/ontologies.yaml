@@ -1,14 +1,3 @@
-# Conferido em parte. A RSL de referência é Souza, Falbo & Vijaykumar,
-# "Ontologies in Software Testing: A Systematic Literature Review" (ONTOBRAS
-# 2013), cujo critério original é "(IC1) The study presents an ontology about
-# the software testing domain". O dataset legado (491 candidatos, 47
-# incluídos) é maior que o da versão ONTOBRAS (295 e 18), provavelmente por
-# corresponder a uma versão estendida da revisão, e seus incluídos abrangem
-# também aplicações de ontologias em teste, como geração de casos de teste
-# para web services via OWL-S, e não só ontologias do domínio. Os critérios
-# abaixo seguem o gold standard do dataset. A divergência será tratada por
-# validação empírica, refinando a redação apenas nos folds de treino, como em
-# Homiar et al. (2025); os folds de teste ficam intocados.
 theme: ontologies
 status: draft
 language: en

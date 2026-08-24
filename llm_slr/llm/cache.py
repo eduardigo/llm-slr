@@ -1,12 +1,3 @@
-"""Cache em disco das respostas do LLM, em JSONL append-only.
-
-Cada rodada faz alguns milhares de inferências por modelo, então o cache
-evita repetir chamadas quando só mudam as métricas ou os notebooks, e ainda
-guarda as respostas brutas.
-
-Chave: sha256(system + user + model). Um arquivo por (tema, modelo,
-estratégia) dentro de config.CACHE_DIR.
-"""
 import hashlib
 import json
 from pathlib import Path

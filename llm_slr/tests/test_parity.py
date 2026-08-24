@@ -1,9 +1,3 @@
-"""Paridade com o código legado, sobre os .bib reais.
-
-Confere que o pipeline lê os mesmos dados, na mesma ordem, e produz os
-mesmos folds temporais que a baseline. Se algo divergir aqui, a comparação
-fold a fold deixa de valer.
-"""
 import sys
 
 import pytest
@@ -13,8 +7,8 @@ from llm_slr.data.loader import load_theme, to_xy
 from llm_slr.data.splits import YearsSplit
 
 sys.path.insert(0, str(LEGACY_ROOT))
-from util.bib_loader import load as legacy_load  # noqa: E402
-from util.years_split import YearsSplit as LegacyYearsSplit  # noqa: E402
+from util.bib_loader import load as legacy_load
+from util.years_split import YearsSplit as LegacyYearsSplit
 
 
 @pytest.mark.parametrize("theme", sorted(THEMES))

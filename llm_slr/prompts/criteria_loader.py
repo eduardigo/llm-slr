@@ -1,8 +1,3 @@
-"""Carga dos critérios de inclusão por tema (prompts/criteria/*.yaml).
-
-O schema representa apenas critérios de inclusão; não existe campo para
-critérios de exclusão.
-"""
 from dataclasses import dataclass
 
 import yaml
@@ -12,10 +7,9 @@ from llm_slr.config import CRITERIA_DIR
 
 @dataclass(frozen=True)
 class ReviewCriteria:
-    """Parte do protocolo da RSL original usada na montagem dos prompts."""
 
     theme: str
-    status: str              # 'draft' enquanto não conferido com a RSL original
+    status: str
     topic: str
     research_question: str
     inclusion_criteria: tuple

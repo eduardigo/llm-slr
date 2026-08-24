@@ -1,4 +1,3 @@
-"""Testes de builder, cache e triagem, com cliente fake e sem rede."""
 import pytest
 
 from llm_slr.data.loader import Article
@@ -48,7 +47,6 @@ def test_prompt_has_criteria_scale_and_no_exclusion(criteria):
     assert criteria.research_question in user
     assert "strongly agree" in user and '"score"' in user
     assert ARTICLE.title in user and ARTICLE.abstract in user
-    # o prompt não pode carregar critérios de exclusão
     assert "exclusion criteria" not in (SYSTEM_PROMPT + user).lower()
 
 
@@ -71,9 +69,8 @@ def test_screen_article_validates_score_and_uses_cache(tmp_path, criteria):
 
     second = screen_article(ARTICLE, criteria, client, cache)
     assert (second.score, second.from_cache) == (6, True)
-    assert client.calls == 1  # segunda chamada veio do cache
+    assert client.calls == 1
 
-    # cache persiste em disco
     reopened = ResponseCache("games", "fake:1b", "zero-shot", cache_dir=tmp_path)
     assert len(reopened) == 1
 
