@@ -36,8 +36,10 @@ Dentro de `llm_slr/`:
   os modelos `llama3.2:3b`, `gemma2:2b` e `qwen2.5:3b`
 
 ```bash
+python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-python -m nltk.downloader punkt stopwords averaged_perceptron_tagger wordnet omw-1.4
+python -m nltk.downloader punkt punkt_tab stopwords \
+    averaged_perceptron_tagger averaged_perceptron_tagger_eng wordnet omw-1.4
 ollama pull llama3.2:3b && ollama pull gemma2:2b && ollama pull qwen2.5:3b
 ```
 
@@ -47,7 +49,16 @@ incluindo todas as transitivas, use `pip install -r requirements-lock.txt`.
 
 Os corpora do NLTK são exigidos pela baseline: `llm_slr/eval/baseline.py`
 reaproveita os filtros de texto do repositório legado (`util/text_filter.py`),
-que tokeniza, remove stopwords e lematiza com o NLTK.
+que tokeniza, remove stopwords e lematiza com o NLTK. A partir do NLTK 3.9 o
+`word_tokenize` usa `punkt_tab` e o `pos_tag` usa
+`averaged_perceptron_tagger_eng`; os pacotes antigos (`punkt`,
+`averaged_perceptron_tagger`) continuam na lista para compatibilidade com
+instalações mais velhas.
+
+Rodando em WSL com o Ollama instalado no Windows, `http://localhost:11434` não é
+alcançável de dentro da distro. Instale o Ollama na própria WSL ou aponte
+`OLLAMA_URL` (em `llm_slr/config.py`) para o IP do host. Isso só importa para
+inferências novas — o cache versionado cobre todas as do estudo.
 
 ## Como usar
 
@@ -62,9 +73,22 @@ python -m llm_slr.experiments.run_baseline
 python -m llm_slr.experiments.run
 python -m llm_slr.experiments.run --themes slr,games --models llama3.2:3b
 
+# Consolida raw.csv + baseline_raw.csv -> llm_slr/results/summary.csv
+python -m llm_slr.eval.summary
+
+# Figuras -> llm_slr/results/figuras/ (ou --out / $LLM_SLR_FIG_DIR)
+python -m llm_slr.experiments.make_figures
+python -m llm_slr.experiments.make_figures --out ../dissertacao/figuras
+
 # Análise dos resultados
 jupyter lab notebooks/
 ```
+
+`llm_slr.eval.summary` precisa rodar depois de `run`/`run_baseline`: é ele que
+gera o `results/summary.csv` consumido pelo notebook `02` e pelo
+`make_figures`. O destino das figuras é `llm_slr/results/figuras/`
+(`FIGURES_DIR` em `config.py`) e pode ser trocado por `--out` ou pela variável
+de ambiente `LLM_SLR_FIG_DIR`, que evita repetir o caminho a cada execução.
 
 Os experimentos são retomáveis: combinações já gravadas em `results/raw.csv` são
 puladas, e o cache de respostas (`llm_slr/cache/`), versionado neste repositório

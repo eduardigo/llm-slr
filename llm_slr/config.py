@@ -5,6 +5,7 @@ LEGACY_ROOT = PROJECT_ROOT / "slr-sentence-embedding-master"
 BIBS_DIR = LEGACY_ROOT / "bibs"
 RESULTS_DIR = PROJECT_ROOT / "llm_slr" / "results"
 CACHE_DIR = PROJECT_ROOT / "llm_slr" / "cache"
+FIGURES_DIR = PROJECT_ROOT / "llm_slr" / "results" / "figuras"
 CRITERIA_DIR = Path(__file__).resolve().parent / "prompts" / "criteria"
 
 THEMES = {

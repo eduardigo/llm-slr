@@ -1,15 +1,19 @@
+import argparse
+import os
+from pathlib import Path
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from matplotlib.colors import LinearSegmentedColormap, TwoSlopeNorm
 from matplotlib.ticker import MaxNLocator
 
-from llm_slr.config import N_SPLITS, PROJECT_ROOT, RESULTS_DIR, THEMES
+from llm_slr.config import FIGURES_DIR, N_SPLITS, RESULTS_DIR, THEMES
 from llm_slr.data.loader import load_theme
 from llm_slr.data.splits import YearsSplit
 from llm_slr.eval.metrics import metrics_at
 
-FIG_DIR = PROJECT_ROOT.parent / "dissertacao" / "figuras"
+FIG_DIR = FIGURES_DIR
 
 C_INCLUDED, C_EXCLUDED = "#2a78d6", "#c3c2b7"
 C_SURFACE, C_INK, C_MUTED, C_GRID = "#ffffff", "#0b0b0b", "#898781", "#e1e0d9"
@@ -234,10 +238,21 @@ def fig_dose_resposta(summary, metric, fname, ylabel):
 
 
 def main():
+    global FIG_DIR
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--out", default=os.environ.get("LLM_SLR_FIG_DIR"),
+                        help="diretório de saída "
+                             f"(padrão: {FIGURES_DIR}, ou $LLM_SLR_FIG_DIR)")
+    args = parser.parse_args()
+    if args.out:
+        FIG_DIR = Path(args.out)
+
     datasets = {t: load_theme(t) for t in sorted(THEMES)}
     raw = pd.read_csv(RESULTS_DIR / "raw.csv")
     summary = pd.read_csv(RESULTS_DIR / "summary.csv")
 
+    print(f"gravando figuras em {FIG_DIR}", flush=True)
     fig_composicao(datasets)
     fig_distribuicao_temporal(datasets)
     fig_dist_scores(raw)

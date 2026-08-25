@@ -1,0 +1,4 @@
+# Normaliza as quebras de linha no repositório para LF.
+# Sem isto, o git do WSL (sem core.autocrlf) enxerga toda a árvore de
+# /mnt/c como modificada, enquanto o git do Windows (autocrlf=true) a vê limpa.
+* text=auto
